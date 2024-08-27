@@ -1,6 +1,9 @@
-import { Application,Request,Response,NextFunction } from "express"
-export default (app:Application)=>{
-app.get('/testRouting',(req,res)=>{
-    res.json('test_ok')
-})
-}
+import { Router, Request, Response } from "express";
+
+const router = Router();
+
+router.get('/testRouting', (req: Request, res: Response) => {
+  res.json('test_ok');
+});
+
+export default router;
