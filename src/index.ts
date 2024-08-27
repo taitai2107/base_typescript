@@ -6,6 +6,7 @@ import { corsHandler } from './middleware/corsHandler'
 import { loggingHandler } from './middleware/loggingHandler';
 import { routeNotFound } from './middleware/routeNotFound';
 import { server } from './config/config';
+import usingRouter from "./api/index"
 
 export const application = express();
 export let httpServer: ReturnType<typeof http.createServer>;
@@ -26,6 +27,7 @@ export const Main = () => {
     logging.log('----------------------------------------');
     logging.log('Define Controller Routing');
     logging.log('----------------------------------------');
+    usingRouter(application)
     application.get('/main/healthcheck', (req, res, next) => {
         return res.status(200).json({ hello: 'world!' });
     });

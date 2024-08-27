@@ -111,7 +111,7 @@ const logging = {
     getCallingFunction
 };
 
-/** Create the global definition */
+
 declare global {
     var logging: {
         log: (message?: any, ...optionalParams: any[]) => void;
